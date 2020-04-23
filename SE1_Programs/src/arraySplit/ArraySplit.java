@@ -3,6 +3,18 @@ package arraySplit;
 public class ArraySplit {
 	 public static void main(String[] args)
 	 {
+	   
+	   /* There are two methods to check if the array can be divided 
+	    * canDivideArraySlow does it in O(n^2)
+	    * 
+	    * canDivideArrayFast does it in O(n) but uses the following helper methods to provide better structure:
+	    *          -> _sumArray
+	    *          -> _sumOdd
+	    *          -> _isSplittable
+	    *          -> _findMiddle
+	   */
+		 
+		// Test Cases
  	   int[] array = new int[] {20,-20,0,20,-400,380};
  	   int[] array2 = new int[] {1,2,-3,0};
   	   System.out.println(canDivideArrayFast(array));
@@ -11,7 +23,7 @@ public class ArraySplit {
 	   System.out.println(canDivideArraySlow(array2));
 	 }
 
-	 private static boolean canDivideArrayFast(int[] array)
+	 public static boolean canDivideArrayFast(int[] array)
 	 {
 		 // Sum up all values of the integer array and save it to 'sum'
 		 int sum = _sumArray(array);
