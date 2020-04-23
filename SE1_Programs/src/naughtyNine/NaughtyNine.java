@@ -5,7 +5,12 @@ public class NaughtyNine {
 	public static void main(String[] args) throws Exception
 	{
 		// Aufgabe 1.3 
-		// Boolean "True" equals "following number has to be skipped"
+		/* Boolean "True" equals "following number has to be skipped"
+		* There are 3 methods implemented to find the solution for the given task:
+		* -> by iteration
+		* -> by string conversion
+		* -> recursive (The recursive solution first uses a helper method to add the value 1, and calls the actual recursion afterwards)
+		*/
 		// test value:
 		int x = 206;
 		
