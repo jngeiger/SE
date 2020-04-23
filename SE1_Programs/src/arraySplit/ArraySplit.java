@@ -28,7 +28,7 @@ public class ArraySplit {
 		 // Sum up all values of the integer array and save it to 'sum'
 		 int sum = _sumArray(array);
 		 
-		 // Checks if sum is an odd number, if it is: Array can't be divided -> returns false
+		 // Checks if sum is an odd number, if it is: Array can't be divided thus returns false
 		 if (_sumOdd(sum))
 			 return false;
 		 
