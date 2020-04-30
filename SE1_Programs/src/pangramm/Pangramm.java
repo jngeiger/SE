@@ -6,6 +6,7 @@ public static void main(String[] args)
 {
 	String str = "Jeder wackere Bayer vertilgt bequem zwo Pfund Kalbshaxen";
 	System.out.println(testPangramm(str));
+	System.out.println(testPangramm2(str));
 }
 
 public static boolean testPangramm(String str)
@@ -36,5 +37,18 @@ public static boolean testPangramm(String str)
 	}
 	return check;
 	
+}
+
+public static boolean testPangramm2(String str) {
+    String buchstaben = "abcdefghijklmnopqrstuvwxyz";
+    boolean rueckgabe = true;
+    str = str.toLowerCase();
+    for(int i = 0; i < buchstaben.length(); i++) {
+        if((str.indexOf(buchstaben.charAt(i)) == -1)) {
+            rueckgabe = false;
+            break;
+        }
+    }
+    return rueckgabe;
 }
 }
