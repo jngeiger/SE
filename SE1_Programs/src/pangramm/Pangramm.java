@@ -40,15 +40,15 @@ public static boolean testPangramm(String str)
 }
 
 public static boolean testPangramm2(String str) {
-    String buchstaben = "abcdefghijklmnopqrstuvwxyz";
-    boolean rueckgabe = true;
+    String alphabet = "abcdefghijklmnopqrstuvwxyz";
+    boolean result = true;
     str = str.toLowerCase();
-    for(int i = 0; i < buchstaben.length(); i++) {
-        if((str.indexOf(buchstaben.charAt(i)) == -1)) {
-            rueckgabe = false;
+    for(int i = 0; i < alphabet.length(); i++) {
+        if((str.indexOf(alphabet.charAt(i)) == -1)) {
+            result = false;
             break;
         }
     }
-    return rueckgabe;
+    return result;
 }
 }
