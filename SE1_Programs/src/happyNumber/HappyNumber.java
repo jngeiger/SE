@@ -7,9 +7,14 @@ public class HappyNumber {
 
 public static void main(String[] args)
 {
-	Integer number = 49;
-	//System.out.println(getDigits(number));
-	System.out.println(happyNumber(number));
+	int[] happyNumbers = new int[] {1, 7, 10, 13, 19, 23, 28, 31, 32, 44, 49, 68, 70, 79, 82, 86, 91, 94, 97, 100};
+	int[] notSoHappyNumbers = new int[] {2,8,9,11,16,24,30,54,67,77,83,87,92,98,99,22,3,4,83,12};
+	
+	for (int i = 0; i < happyNumbers.length; i++)
+	{
+		System.out.println(happyNumber(happyNumbers[i]));
+		System.out.println(happyNumber(notSoHappyNumbers[i]));
+	}
 	
 }
 
