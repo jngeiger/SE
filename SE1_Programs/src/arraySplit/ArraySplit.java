@@ -16,7 +16,7 @@ public class ArraySplit {
 		 
 		// Test Cases
  	   int[] array = new int[] {20,-20,0,20,-400,380};
- 	   int[] array2 = new int[] {1,2,-3,0};
+ 	   int[] array2 = new int[] {42,-42};
   	   System.out.println(canDivideArrayFast(array));
   	   System.out.println(canDivideArraySlow(array));
   	   System.out.println(canDivideArrayFast(array2));
@@ -83,9 +83,7 @@ public class ArraySplit {
 	 }
 	 
 	 
-	 
-	 
-	 
+	
 	 
 	 
 	 
