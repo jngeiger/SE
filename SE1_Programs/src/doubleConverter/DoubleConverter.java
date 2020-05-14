@@ -4,7 +4,7 @@ public class DoubleConverter {
 
 	public static void main(String[] args) throws Exception
 	{
-		String s = "2.333E2"; 
+		String s = "-5.232E2"; 
 		double d = 2340000000000.0;
 		
 		
@@ -21,7 +21,7 @@ public class DoubleConverter {
 		
 		for (int i = 0; i < s.length() - 1; i++)
 		{
-			if (s.charAt(i) == 'E')
+			if (s.charAt(i) == 'E' || s.charAt(i) == 'e')
 			{
 				exponential = true;
 				int j = s.length()-1;
