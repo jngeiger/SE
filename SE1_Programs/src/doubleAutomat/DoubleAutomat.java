@@ -1,6 +1,20 @@
 package doubleAutomat;
 
 
+//Test Cases
+/* 12.232E-4 -> OK : RESULT -> OK
+* 12.0 -> OK : RESULT -> OK
+* 1.23232E -> NOK : RESULT -> NOK
+* 1.234424E2 -> -> OK : RESULT -> OK
+* 0.232 -> OK : RESULT -> OK
+* 0.232E-2 -> OK : RESULT -> OK
+* HALLO -> -> NOK : RESULT -> NOK
+* 0,232 -> NOK : RESULT -> NOK
+* 12F232 -> -> NOK : RESULT -> NOK
+* 12.434e1 -> OK : RESULT -> OK
+*/
+
+
 enum State { 
 	ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TEN;
 }; 
@@ -13,7 +27,7 @@ private boolean isValid;
 
 public static void main(String[] args)
 {
-	DoubleAutomat automat = new DoubleAutomat("12.232E-4");
+	DoubleAutomat automat = new DoubleAutomat("12.434e1");
 	System.out.println(automat.checkValue());
 }
 
@@ -32,12 +46,28 @@ public boolean checkValue()
 	{
 		enter(value.charAt(i++));
 	}
-	return isValid;
+	return isValid && checkValidState();
 }
 
 
 
-public void enter(char x)
+
+private boolean checkValidState()
+{
+	switch (currentState)
+	{
+	case THREE: return true;
+	case FOUR: return true;
+	case FIVE: return true;
+	case SIX: return true;
+	case NINE: return true;
+	case TEN: return true;
+	default: return false;
+	}
+}
+
+
+private void enter(char x)
 {
 	switch (currentState)
 	{
@@ -195,26 +225,6 @@ private void _fromState10(char x)
 {
 	isValid = false; return;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // checkt ob ziffer zwischen 1 und 9
