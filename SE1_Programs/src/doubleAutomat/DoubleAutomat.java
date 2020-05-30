@@ -49,7 +49,14 @@ public boolean checkValue()
 	return isValid && checkValidState();
 }
 
-
+public double convert() throws Exception
+{
+	if (!checkValue()) throw new Exception("Keine valider Doublewert eingegeben!");
+	
+	else {
+		return -1D;
+	}
+}
 
 
 private boolean checkValidState()
