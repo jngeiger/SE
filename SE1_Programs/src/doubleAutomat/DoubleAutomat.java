@@ -1,5 +1,6 @@
 package doubleAutomat;
 
+import java.util.Scanner;
 
 //Test Cases
 /* 12.232E-4 -> OK : RESULT -> OK
@@ -27,7 +28,8 @@ private boolean isValid;
 
 public static void main(String[] args)
 {
-	DoubleAutomat automat = new DoubleAutomat("12.434e1");
+	Scanner scan = new Scanner(System.in);
+	DoubleAutomat automat = new DoubleAutomat(scan.next());
 	System.out.println(automat.checkValue());
 }
 
@@ -93,7 +95,7 @@ private void enter(char x)
 
 private void _fromState1 (char x)
 {
-	if (_isNumber(x))
+	if (_isNumber(x,false))
 	{
 		currentState = State.FOUR;
 		return;
@@ -114,7 +116,7 @@ private void _fromState1 (char x)
 
 private void _fromState2(char x)
 {
-	if (_isNumber(x))
+	if (_isNumber(x,false))
 	{
 		currentState = State.FOUR;
 		return;
@@ -138,7 +140,7 @@ private void _fromState3(char x)
 
 private void _fromState4(char x)
 {
-	if (_isNumberPlus0(x))
+	if (_isNumber(x,true))
 	{
 		return;
 	}
@@ -157,7 +159,7 @@ private void _fromState4(char x)
 
 private void _fromState5(char x)
 {
-	if (_isNumberPlus0(x))
+	if (_isNumber(x,true))
 	{
 		currentState = State.SIX;
 	}
@@ -168,7 +170,7 @@ private void _fromState5(char x)
 
 private void _fromState6(char x)
 {
-	if (_isNumberPlus0(x))
+	if (_isNumber(x,true))
 		return;
 	else if (x == 'e' || x == 'E')
 	{	
@@ -183,7 +185,7 @@ private void _fromState6(char x)
 
 private void _fromState7(char x)
 {
-	if (_isNumber(x))
+	if (_isNumber(x,false))
 	{
 		currentState = State.NINE;
 		return;
@@ -206,7 +208,7 @@ private void _fromState7(char x)
 
 private void _fromState8(char x)
 {
-	if (_isNumber(x))
+	if (_isNumber(x,false))
 	{
 		currentState = State.NINE;
 		return;
@@ -219,7 +221,7 @@ private void _fromState8(char x)
 
 private void _fromState9(char x)
 {
-	if (_isNumberPlus0(x))
+	if (_isNumber(x,true))
 	{
 		return;
 	}
@@ -235,10 +237,11 @@ private void _fromState10(char x)
 
 
 // checkt ob ziffer zwischen 1 und 9
-private boolean _isNumber(char x)
+private boolean _isNumber(char x,boolean zeroIncluded)
 {
 	switch (x)
 	{
+	case '0': return zeroIncluded ? true:false;
 	case '1': return true;
 	case '2': return true;
 	case '3': return true;
@@ -251,25 +254,5 @@ private boolean _isNumber(char x)
 	default: return false;
 	}
 }
-
-//checkt ob ziffer zwischen 0 und 9
-private boolean _isNumberPlus0(char x)
-{
-	switch (x)
-	{
-	case '0': return true;
-	case '1': return true;
-	case '2': return true;
-	case '3': return true;
-	case '4': return true;
-	case '5': return true;
-	case '6': return true;
-	case '7': return true;
-	case '8': return true;
-	case '9': return true;
-	default: return false;
-	}
-}
-
 	
 }
